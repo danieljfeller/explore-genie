@@ -1,0 +1,4 @@
+group,n,events,median_months,surv_1y,surv_2y,surv_5y,p_logrank
+classic (L858R / ex19del),310,130,63.8,0.961,0.834,0.527,0.004424402076641891
+exon 20 insertion,22,11,40.0,0.955,0.854,0.21,0.004424402076641891
+atypical / other,82,49,41.5,0.865,0.729,0.288,0.004424402076641891

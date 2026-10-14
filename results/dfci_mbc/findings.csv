@@ -1,0 +1,4 @@
+question,verdict,note
+M1,consistent with BPC BrCa Br1,"PIK3CA-only n=179 median 105.5 vs TP53-only n=287 median 30.3 mo from met dx, p=1.5e-10, HR 3.01, subtype/age-adjusted 2.87 (p=4.8e-07); within HR+/HER2−: median 87.0 vs 37.7 mo, HR 2.62 (p=7.2e-05)."
+M2,signal,"All MBC, FDR<0.1: TP53 mut HR 2.58 q=3.2e-15, NOTCH2 amp HR 1.53 q=0.0042, ERBB2 amp HR 0.57 q=0.0078, IKZF3 amp HR 0.59 q=0.0091, RB1 mut HR 2.24 q=0.01. Within PIK3CA-mut, FDR<0.1: EXT1 amp HR 4.46 q=0.00028, RAD21 amp HR 4.10 q=0.00028, TP53 mut HR 2.65 q=0.002, MYC amp HR 2.40 q=0.0039, MEN1 mut HR 6.02 q=0.0041."
+M3,descriptive,"HR+/HER2− with stated timing: 33 post-first-line vs 90 treatment-naive samples. ESR1 mut 27.3% post vs 5.6% naive (Fisher p=0.002). Top differences: ESR1 mut 27.3% vs 5.6%, PRKDC mut 24.2% vs 4.4%, ATM mut 15.2% vs 1.1%."
