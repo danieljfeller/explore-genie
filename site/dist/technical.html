@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GENIE Question Audit</title>
+<meta name="description" content="Replication and extension of 32 cBioPortal survival-by-alteration questions across ten GENIE and cBioPortal datasets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="tech">
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">Cancer genes and survival</a>
+    <nav class="switch" aria-label="Audience">
+      <a href="index.html" >Plain language</a>
+      <a href="technical.html" aria-current="page">Technical</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero compact">
+  <p class="eyebrow">For Jacob · the 33 deck questions, replicated and extended</p>
+  <h1>Survival by alteration across the GENIE and cBioPortal datasets</h1>
+  <p class="lede">Each question is answered three ways: the deck's cBioPortal figure reproduced under its own definition, the corrected analysis next to it, and a one-line verdict. Charts are interactive; every number traces to a CSV in the repository and to the executed notebook for its dataset.</p>
+  <div class="tiles" id="tiles"></div>
+</section>
+
+<section>
+  <h2>Conventions used in every notebook</h2>
+  <dl class="conv">
+    <dt>Index date</dt><dd>Diagnosis of the index cancer (BPC <code>tt_os_dx</code>), as in the deck. Treatment questions: OS from regimen start (<code>tt_os_g</code>), metastatic-setting regimens only. AKT1: from metastatic diagnosis. GENIE v20: from the sequencing report (the only index available).</dd>
+    <dt>Alterations</dt><dd><em>mut</em> = any non-synonymous somatic mutation (no OncoKB filter, the files lack it); <em>amp</em> = discrete +2; <em>homdel</em> = −2; <em>fus</em> = any structural variant on the gene. Questions that say "mutation" use <em>mut</em>; CDKN2A/B, MTAP, ERG and ALK questions use the type the deck names.</dd>
+    <dt>One sample per patient</dt><dd>Earliest sequenced sample of the index cancer (BPC) or the primary (portal). A patient is wild-type for a gene only if the gene is on that sample's panel; otherwise excluded from that comparison.</dd>
+    <dt>Profiles</dt><dd>Mutually exclusive groups for multi-gene questions; the overlap cBioPortal's group comparison drops (e.g. KEAP1+STK11, PIK3CA+TP53) is kept as its own group.</dd>
+    <dt>Statistics</dt><dd>Kaplan–Meier with log-rank p (what cBioPortal shows) plus a Cox HR left-truncated at the sequencing report (<em>HR (LT)</em>); adjusted models add stage and age, subtype in breast, IDH in glioma, centre in v20. Screens: ≥10 per group, Benjamini–Hochberg FDR, q&lt;0.1 flagged.</dd>
+    <dt>cBioPortal replication</dt><dd>Its "OS from start of treatment" attributes are per <em>regimen</em>; its group comparison excludes patients in both groups. Replicates use those exact definitions first.</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>All verdicts</h2>
+  <div class="filters" id="filters"></div>
+  <div class="tablewrap"><table class="verdicts" id="vtable"><thead><tr><th>Dataset</th><th>Q</th><th>Verdict</th><th>Result</th></tr></thead><tbody></tbody></table></div>
+</section>
+
+<section>
+  <h2>By dataset</h2>
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <div id="panels"></div>
+</section>
+
+<section>
+  <h2>Open decisions</h2>
+  <ul class="recap">
+    <li><strong>N5 response definition.</strong> BPC PFS-I/M medians on osimertinib are ~5 months; time to next treatment (≥12 vs &lt;6 months) was used. If you prefer PFS-I, the screen is in <code>N5_pfs_i_screen_on_osimertinib.csv</code>.</li>
+    <li><strong>Alteration scope.</strong> All non-synonymous variants counted. An OncoKB oncogenic filter would need the OncoKB API; it would mostly shrink the TP53 and KMT2D groups.</li>
+    <li><strong>Treatment-effect questions (N4, A2, B2, Br2, Br4).</strong> Regimen-start OS with line-of-therapy tables is as far as these data go without a target-trial design; the pieces (regimen dates, lines, metastatic flags) are in the loader.</li>
+    <li><strong>ERG in prostate.</strong> Any ERG-degrader framing should restrict to panels that call the rearrangement (MSK-IMPACT468, DFCI-ONCOPANEL-3, VICC-01-T7).</li>
+    <li><strong>GENIE v20 small-n hits</strong> (EGFR, NF2, ROS1 mutations in ALK-fusion NSCLC, n≈13 each) are leads, not results.</li>
+    <li><strong>DFCI metastatic breast cancer</strong> earned its place as an independent replication cohort (M1, M2); it could also serve C2-type pre/post questions (M3).</li>
+  </ul>
+</section>
+
+</main>
+<footer class="wrap foot">
+  <p>Data: <a href="https://www.aacr.org/professionals/research/aacr-project-genie/">AACR Project GENIE</a> (BPC cohorts and the v20.0-public release, via Synapse) and
+  <a href="https://genie.cbioportal.org/">genie.cbioportal.org</a> (AKT1, DFCI glioma and DFCI metastatic breast studies). Analysis code, notebooks and tables:
+  <a href="https://github.com/danieljfeller/explore-genie/tree/cbio-genie-analyses">explore-genie</a>. Built by Daniel Feller with Claude Code, October 2026.</p>
+  <p>These are statistical associations in past patients from a handful of academic hospitals. They are not predictions for any individual and not treatment advice.</p>
+</footer>
+<div id="lightbox" class="lightbox" hidden><button class="lb-close" aria-label="Close">×</button><img alt=""><div class="lb-cap"></div></div>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>window.GENIE_PAGE='tech'; Site.init();</script>
+</body>
+</html>
