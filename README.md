@@ -22,12 +22,12 @@ datasets the deck names. The question list, with groups and endpoints made expli
 | `01_bpc_nsclc` | GENIE BPC NSCLC v2.0-public | N1–N6 | executed |
 | `02_genie_akt1` | AACR GENIE AKT1 cohort | A1–A5 | executed |
 | `03_dfci_glioma` | DFCI-Profile glioma 2013–2018 | G1–G2 | executed |
-| `04_bpc_bladder` | GENIE BPC BLADDER v1.0-public | B1–B2 | written, needs download |
+| `04_bpc_bladder` | GENIE BPC BLADDER v1.0-public | B1–B2 | executed |
 | `05_bpc_brca` | GENIE BPC BrCa v1.0-public | Br1–Br6 | executed |
-| `06_bpc_crc` | GENIE BPC CRC v2.0-public | C1–C4 | written, needs download |
-| `07_bpc_panc` | GENIE BPC PANC v1.0-public | P1 | written, needs download |
-| `08_bpc_prostate` | GENIE BPC Prostate v1.0-public | Pr1–Pr3 | written, needs download |
-| `09_genie_v20` | GENIE v20.0-public main release | V1–V4 | written, needs download |
+| `06_bpc_crc` | GENIE BPC CRC v2.0-public | C1–C4 | executed |
+| `07_bpc_panc` | GENIE BPC PANC v1.0-public | P1 | executed |
+| `08_bpc_prostate` | GENIE BPC Prostate v1.0-public | Pr1–Pr3 | executed |
+| `09_genie_v20` | GENIE v20.0-public main release | V1–V4 | executed (ALK-fusion cohort) |
 | `10_dfci_mbc` | DFCI metastatic breast cancer 2013–2016 | none in deck; exploratory M1–M3 | executed |
 
 ## Running

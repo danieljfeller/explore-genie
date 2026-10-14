@@ -595,12 +595,14 @@ def compare(surv, status: pd.Series, labels=("WT", "altered"), time="time", even
 
 
 def gene_screen(surv, alts: Alterations, kinds=("mut",), genes=None, min_n=10, time="time", event="event",
-                entry=None, adjust=(), patients=None) -> pd.DataFrame:
+                entry=None, adjust=(), patients=None, min_tested_frac=0.0) -> pd.DataFrame:
     """Test every gene feature (altered vs not, among patients tested for the gene) against OS.
-    Groups smaller than min_n are skipped. BH-FDR over the log-rank p-values."""
+    Groups smaller than min_n are skipped, as are genes tested in less than min_tested_frac of the cohort
+    (guards against genes carried by a single centre's panel). BH-FDR over the log-rank p-values."""
     kinds = alts._kinds(kinds)
     base = surv if patients is None else surv.loc[surv.index.intersection(patients)]
     base = base.dropna(subset=[time, event])
+    n_cohort = len(base)
     rows = []
     for k in kinds:
         M, T = alts.matrix(k), alts.tested_for(k)
@@ -608,6 +610,9 @@ def gene_screen(surv, alts: Alterations, kinds=("mut",), genes=None, min_n=10, t
             if g not in M.columns:
                 continue
             idx = base.index.intersection(T.index[T[g]])
+            tested_frac = len(idx) / n_cohort if n_cohort else 0.0
+            if tested_frac < min_tested_frac:
+                continue
             st = M.loc[idx, g]
             n_alt, n_wt = int(st.sum()), int((~st).sum())
             if n_alt < min_n or n_wt < min_n:
@@ -617,7 +622,7 @@ def gene_screen(surv, alts: Alterations, kinds=("mut",), genes=None, min_n=10, t
             p = logrank_p(d, "feat", time, event)
             km_a = KaplanMeierFitter().fit(d.loc[d.feat == 1, time], d.loc[d.feat == 1, event])
             km_w = KaplanMeierFitter().fit(d.loc[d.feat == 0, time], d.loc[d.feat == 0, event])
-            row = dict(feature=f"{g} {k}", gene=g, kind=k, n_alt=n_alt, n_wt=n_wt,
+            row = dict(feature=f"{g} {k}", gene=g, kind=k, n_alt=n_alt, n_wt=n_wt, tested_frac=round(tested_frac, 2),
                        events_alt=int(d.loc[d.feat == 1, event].sum()), events_wt=int(d.loc[d.feat == 0, event].sum()),
                        median_alt=round(km_a.median_survival_time_, 1), median_wt=round(km_w.median_survival_time_, 1),
                        p_logrank=p)

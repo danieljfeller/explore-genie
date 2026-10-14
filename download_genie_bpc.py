@@ -8,7 +8,7 @@ Usage:
   python download_genie_bpc.py [--cohorts NSCLC CRC GENIE_main] [--skip-optional] [--out data/genie]
 
 Manifest categories: docs, clinical, analytic, timeline, genomic, panel, optional.
-A 'panel_folder' row means: take the parent folder of synapse_id and download every child
+A 'panel_folder' row means: synapse_id is a folder (or any file inside it); download every child of that folder
 whose name matches the filename pattern (used for the ~180 v20 gene-panel files).
 """
 import argparse, fnmatch, hashlib, pathlib
@@ -43,7 +43,8 @@ def fetch(cohort, category, syn_id, dest):
 for row in m.itertuples(index=False):
     dest = pathlib.Path(args.out) / row.cohort / row.category
     if row.category == "panel_folder":
-        parent = syn.get(row.synapse_id, downloadFile=False).parentId
+        ent = syn.get(row.synapse_id, downloadFile=False)
+        parent = row.synapse_id if "Folder" in ent.concreteType else ent.parentId   # a folder id, or any file inside the folder
         for child in syn.getChildren(parent, includeTypes=["file"]):
             if fnmatch.fnmatch(child["name"], row.filename):
                 fetch(row.cohort, "panel", child["id"], pathlib.Path(args.out) / row.cohort / "panel")

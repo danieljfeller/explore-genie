@@ -263,6 +263,6 @@ GENIE_main,20.0-public,genomic,data_mutations_extended.txt,syn76285067
 GENIE_main,20.0-public,genomic,data_CNA.txt,syn76285060
 GENIE_main,20.0-public,panel,data_gene_matrix.txt,syn76285065
 GENIE_main,20.0-public,panel,genie_information.txt,syn76452557
-GENIE_main,20.0-public,panel_folder,data_gene_panel_*.txt,syn76285065
+GENIE_main,20.0-public,panel_folder,data_gene_panel_*.txt,syn76285518
 GENIE_main,20.0-public,optional,data_cna_hg19.seg,syn76285064
 GENIE_main,20.0-public,optional,tmb_20.0-public.tsv,syn76285103

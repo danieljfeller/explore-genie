@@ -1,0 +1,4 @@
+question,verdict,note
+Pr1,descriptive,"ERG altered in 222/1040 patients (21.3%; fusions 217, mutations 5, amp 1). Fusion frequency ranges 0.0–33.3% across panels (detection artefact). OS, detecting panels only: median 145.0 vs 152.8 mo, p=0.865, adjusted HR (LT) 1.05."
+Pr2,replicated,"ERG-altered: AR co-altered n=33 median 144.6 vs PTEN co-altered n=46 median 90.2 mo, log-rank p=0.056, HR (LT) PTEN vs AR 0.43. Four-group log-rank p=7.6e-04. AR amplification marks castration resistance acquired under therapy, so the AR group is enriched for late-sequenced patients."
+Pr3,signal,"ERG-altered n=222, 11 features tested. FDR<0.1: TP53 mut (n=79) HR 2.73 q=6.8e-06, PTEN homdel (n=42) HR 2.43 q=0.002, KMT2D mut (n=18) HR 1.72 q=0.043, AR amp (n=39) HR 4.04 q=0.099. ERG-specific if absent from the ERG-wt screen: PTEN homdel, KMT2D mut."
