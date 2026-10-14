@@ -1,0 +1,6 @@
+,n,events,median_months,surv_1y,surv_2y,surv_5y,treatment
+0,11,6,52.4,1.0,0.9,0.0,CDK4/6 inhibitor
+0,68,24,91.8,1.0,0.92,0.746,HER2-targeted
+0,34,19,57.5,1.0,0.939,0.492,aromatase inhibitor
+0,161,83,62.6,0.91,0.8,0.519,chemotherapy
+0,46,27,59.8,0.978,0.86,0.495,tamoxifen

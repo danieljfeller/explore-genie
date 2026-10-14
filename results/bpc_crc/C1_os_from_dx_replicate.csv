@@ -1,0 +1,4 @@
+group,n,events,median_months,surv_1y,surv_2y,surv_5y,p_logrank
+pre-leucovorin,855,435,52.3,0.929,0.769,0.443,2.376744009120266e-10
+post-leucovorin,382,198,72.6,0.984,0.898,0.609,2.376744009120266e-10
+no leucovorin regimen,248,57,111.7,0.912,0.829,0.718,2.376744009120266e-10

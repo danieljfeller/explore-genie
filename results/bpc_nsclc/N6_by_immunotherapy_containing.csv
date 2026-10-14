@@ -1,0 +1,6 @@
+group,n,events,median_months,surv_1y,surv_2y,surv_5y,p_logrank,treatment
+none of the three,264,184,12.9,0.525,0.315,0.099,0.2478434412953459,immunotherapy-containing
+EGFR,68,45,12.1,0.503,0.283,0.251,0.2478434412953459,immunotherapy-containing
+KEAP1,39,27,14.9,0.568,0.329,0.177,0.2478434412953459,immunotherapy-containing
+STK11,42,35,12.0,0.491,0.196,0.065,0.2478434412953459,immunotherapy-containing
+KEAP1+STK11,35,30,6.0,0.398,0.301,0.0,0.2478434412953459,immunotherapy-containing

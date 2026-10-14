@@ -1,0 +1,2 @@
+question,verdict,note
+P1,signal,"KRAS-mut n=952. FDR<0.1 co-alterations: CDKN2A homdel (n=128) HR 1.47 q=0.0021, CDKN2B homdel (n=120) HR 1.53 q=0.0021, SMAD4 homdel (n=43) HR 1.66 q=0.0021, NTRK3 mut (n=15) HR 2.32 q=0.023, FLCN mut (n=10) HR 2.23 q=0.091, CDKN2A mut (n=220) HR 1.29 q=0.093, TP53 mut (n=737) HR 1.26 q=0.093, AKT2 amp (n=33) HR 1.53 q=0.093, CDK12 amp (n=11) HR 1.89 q=0.093. CDKN2A homdel n=128.0: median 14.9 vs 21.3 mo, HR (LT) 1.47 (p=3.5e-04); MTAP homdel n=27.0: HR 1.40 (p=0.112); co-deletion adjusted HR 1.04 (p=0.842)."

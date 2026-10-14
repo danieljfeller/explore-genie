@@ -1,0 +1,3 @@
+group,n,events,median_months,surv_1y,surv_2y,surv_5y,p_logrank,HR_LT_osi_vs_chemo
+Osimertinib,11,4,26.9,0.857,0.714,0.0,0.6566869907500273,0.871141806389028
+"Chemotherapy, no EGFR TKI",68,45,34.1,0.912,0.668,0.263,0.6566869907500273,0.871141806389028

@@ -1,0 +1,7 @@
+question,verdict,note
+N1,confirmed,EGFR-mut (n=414) median OS 56.5 vs 42.3 mo in EGFR-wt; log-rank p=9.9e-06; HR (LT) 0.75 [0.64-0.89]. Stage IV only: HR 0.67. Classic sensitising mutations drive the benefit (median 63.8 mo).
+N2,signal,1 of 64 co-alterations at FDR<0.1: TP53 mut (n=243) HR 1.77 q=0.0074
+N3,signal,"Top co-alterations in EGFR-mut: TP53 mut 58.7%, CDKN2A homdel 10.9%, CDKN2B homdel 10.6%, NKX2-1 amp 9.3%, KMT2D mut 7.5%; negative prognosis at FDR<0.1: TP53 mut HR 1.77"
+N4,not supported as a treatment effect,"From diagnosis (deck view): received-osimertinib median 67.5 vs received-chemo 37.7 mo, p=6.4e-04 (immortal time: osimertinib is 2nd+ line in 91% of patients). From regimen start, metastatic setting: osimertinib n=129 median 20.8 vs chemo n=137 median 25.5 mo, p=0.205, HR (LT) 0.92. First line only: n=11 vs 68, median 26.9 vs 34.1 mo, p=0.657."
+N5,no robust signal,"good n=60, poor n=48. Profile differences at FDR<0.1: none. Time-to-next-treatment screen at FDR<0.1: none. PFS-I screen at FDR<0.1: none. Nominal top (TTNT): NKX2-1 amp HR 1.88 p=0.010."
+N6,signal,"OS from dx: median none=51.6, EGFR=56.5, KEAP1=31.9, STK11=41.3, KEAP1+STK11=29.5 mo; log-rank p=1.0e-07. Adjusted HR vs none: EGFR 0.74, KEAP1 1.40, STK11 1.31, KEAP1+STK11 2.02. On immunotherapy: median none=12.9, KEAP1=14.9, STK11=12.0, KEAP1+STK11=6.0 mo (p=0.248)."

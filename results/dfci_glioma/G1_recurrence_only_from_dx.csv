@@ -1,0 +1,3 @@
+group,n,events,median_months,surv_1y,surv_2y,surv_5y,p_logrank
+no TMZ before resection,25,11,139.1,1.0,0.875,0.657,0.006104459445751918
+TMZ before resection,135,92,45.1,0.962,0.742,0.375,0.006104459445751918

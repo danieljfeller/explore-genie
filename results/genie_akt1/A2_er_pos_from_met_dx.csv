@@ -1,0 +1,3 @@
+group,n,events,median_months,surv_1y,surv_2y,surv_5y,p_logrank
+no AI,43,25,33.8,0.865,0.547,0.126,1.678360120511109e-07
+AI treated,317,138,58.5,0.96,0.856,0.488,1.678360120511109e-07

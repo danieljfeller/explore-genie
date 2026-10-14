@@ -1,0 +1,6 @@
+group,n,events,median_months,surv_1y,surv_2y,surv_5y,p_logrank,treatment
+none of the three,507,293,35.7,0.797,0.598,0.304,9.383794703315132e-05,"platinum chemotherapy, no IO or TKI"
+EGFR,152,81,40.5,0.87,0.671,0.366,9.383794703315132e-05,"platinum chemotherapy, no IO or TKI"
+KEAP1,64,39,30.8,0.708,0.591,0.35,9.383794703315132e-05,"platinum chemotherapy, no IO or TKI"
+STK11,69,50,29.6,0.783,0.594,0.238,9.383794703315132e-05,"platinum chemotherapy, no IO or TKI"
+KEAP1+STK11,61,49,13.7,0.565,0.375,0.182,9.383794703315132e-05,"platinum chemotherapy, no IO or TKI"

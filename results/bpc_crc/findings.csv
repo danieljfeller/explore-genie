@@ -1,0 +1,5 @@
+question,verdict,note
+C1,"replicated, but it is immortal-time bias","From dx: pre n=855 median 52.3 vs post n=382 median 72.6 mo, p=2.4e-10, naive HR post vs pre 0.61. From sample collection: median 47.6 vs 44.7 mo, p=0.642; left-truncated + stage + age HR 0.81 (p=0.021)."
+C2,no difference at FDR<0.1,"Pre vs post chemotherapy, FDR<0.1: none. Nominal top: BCL2 homdel 0.4% -> 2.1% (p=0.003)."
+C3,descriptive,"26 patients have paired pre/post-chemotherapy samples. Mutations gained 50, lost 37, kept 98. Most often gained: TP53 mut (n=4), AURKA amp (n=3), ALK mut (n=2), PIK3R1 mut (n=2), CDKN2B homdel (n=2)."
+C4,signal,"Single genes (HR adj. stage/age): KRAS 1.44, TP53 0.98, APC 0.76, BRAF 1.03. Profiles vs none, adjusted: KRAS+TP53 HR 1.30 (p=0.242), KRAS+TP53+APC HR 1.01 (p=0.964), TP53 HR 0.86 (p=0.481). Log-rank across profiles p=8.0e-08."
